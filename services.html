@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChemiConnect - Sustainability</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header placeholder -->
+        <div id="header"></div>
+
+        <!-- Sustainability Content -->
+        <section class="sustainability">
+            <div class="containerBody">
+                <h3>Our Services</h3>
+                <p>Select a service area to learn more</p>
+
+                <!-- Dropdown for Sustainability Areas -->
+                <label for="sustainability-options">Explore Our Service Areas:</label>
+                <select class="material-dropdown" id="sustainability-options" name="sustainability-options" onchange="showContent()">
+                    <option value="default">-- Select a Area --</option>
+                    <option value="custom-formulation">Custom Formulation</option>
+                    <option value="regulatory-support">Regulatory Compliance Support</option>
+                    <option value="real-time-tracking">Real-Time Tracking</option>
+                </select>
+
+                <div id="custom-formulation" class="content-area" style="display: none; margin-top: 20px;">
+                    <h2 style="margin-bottom: 20px;">Custom Formulation</h4>
+                    <p><strong>Tailored Chemical Solutions:</strong> We specialize in creating custom chemical formulations to meet the unique requirements of various industries, ensuring optimal performance and sustainability.</p>
+                    <p><strong>Collaborative Development:</strong> Our chemists work closely with clients to develop tailored products that enhance efficiency, reduce environmental impact, and meet specific operational goals.</p>
+                    <p><strong>Testing and Validation:</strong> We rigorously test all custom formulations to ensure they meet the necessary performance standards, safety regulations, and sustainability goals.</p>
+                    <p><strong>Ongoing Support:</strong> After developing a custom solution, Chemiconnect provides continuous support and modifications to ensure the formulation evolves with your business needs.</p>
+                </div>
+
+                <div id="regulatory-support" class="content-area" style="display: none; margin-top: 20px;">
+                    <h2 style="margin-bottom: 20px;">Regulatory Compliance Support</h4>
+                    <p><strong>Industry-Specific Compliance:</strong> Chemiconnect offers detailed regulatory support, ensuring that your chemical products meet the safety and environmental regulations of your industry, including REACH, OSHA, and EPA standards.</p>
+                    <p><strong>Documentation and Certification:</strong> We provide all necessary documentation and certifications required for regulatory submissions, helping businesses avoid delays and penalties.</p>
+                    <p><strong>Hazardous Materials Handling:</strong> Guidance on the safe handling, transportation, and storage of hazardous materials, ensuring your operations meet legal and safety standards.</p>
+                    <p><strong>Global Compliance:</strong> For businesses operating internationally, we help navigate the complexities of global chemical regulations, ensuring smooth compliance across multiple jurisdictions.</p>
+                </div>
+                 <!-- Real-Time Tracking Section -->
+                 <div id="real-time-tracking" class="content-area" style="display: none; margin-top: 20px;">
+                    <h2 style="margin-bottom: 20px;">Real-Time Order Tracking</h2>
+                    <p>Enter your order number below to track your shipment.</p>
+                    <input type="text" id="order-number" placeholder="Enter Order Number" class="tracking-input">
+                    <button class="btn" onclick="trackOrder()">Track Order</button>
+                    <!-- Tracking Status UI will be displayed here -->
+                     <!-- Progress Bar for Order Tracking -->
+                     <div class="progress-bar" id="tracking-progress" style="display: none;">
+                        <div class="step completed">
+                            <div class="circle"></div>
+                            <span>Ordered<br></span>
+                        </div>
+                        <div class="step completed">
+                            <div class="circle"></div>
+                            <span>Ready<br></span>
+                        </div>
+                        <div class="step current">
+                            <div class="circle"></div>
+                            <span>Shipped<br></span>
+                        </div>
+                        <div class="step">
+                            <div class="circle"></div>
+                            <span>Delivered<br></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer placeholder -->
+        <footer id="footer"></footer>
+    </div>
+
+    <script src="loadHeaderFooter.js"></script>
+    <script>
+        function showContent() {
+            // Hide all content areas
+            document.querySelectorAll('.content-area').forEach(function (content) {
+                content.style.display = 'none';
+            });
+
+            // Get the selected value
+            const selectedValue = document.getElementById('sustainability-options').value;
+
+            // Show the corresponding content based on selected value
+            if (selectedValue !== 'default') {
+                document.getElementById(selectedValue).style.display = 'block';
+            }
+        }
+        function trackOrder() {
+            const orderNumber = document.getElementById('order-number').value;
+            if (orderNumber) {
+                // Show the tracking progress and updates
+                document.getElementById('tracking-progress').style.display = 'flex';
+                document.getElementById('tracking-updates').style.display = 'block';
+            } else {
+                alert('Please enter a valid order number.');
+            }
+        }
+    </script>
+</body>
+</html>

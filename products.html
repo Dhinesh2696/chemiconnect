@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChemiConnect - Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header placeholder -->
+        <div id="header"></div>
+
+        <!-- Product Catalog Section -->
+        <section class="product-catalog">
+            <div class="containerBody">
+                <h1>Product Catalog</h1>
+
+                <!-- Category Dropdown -->
+                <label for="category">Select Category:</label>
+                <select id="category" name="category" onchange="showSubcategories()">
+                    <option value="default">-- Choose a Category --</option>
+                    <option value="industry-oils">Industry Oils</option>
+                    <option value="speciality-chemicals">Speciality Chemicals</option>
+                    <option value="agricultural-chemicals">Agricultural Chemicals</option>
+                    <option value="pharmaceuticals">Pharmaceutical Intermediates</option>
+                    <option value="food-grade-oils">Food Grade Oils</option>
+                    <option value="food-grade-additives">Food Grade Additives</option>
+                </select>
+
+                <!-- Subcategory Dropdown -->
+                <label for="subcategory" style="display: none;">Select Subcategory:</label>
+                <select id="subcategory" name="subcategory" style="display: none;" onchange="showProducts()">
+                    <!-- Subcategories will be dynamically added here -->
+                </select>
+
+                <!-- Product Information Section -->
+                <div id="product-info" style="display: none;">
+                    <!-- Product description and cards will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer placeholder -->
+        <footer id="footer"></footer>
+    </div>
+
+    <script src="loadHeaderFooter.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>

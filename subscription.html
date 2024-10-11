@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChemiConnect - Subscription</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header placeholder -->
+        <header id="header"></header>
+
+        <!-- Subscription Section -->
+        <section class="subscription">
+            <div class="containerBody">
+                <h3>Request Subscription</h3>
+                <p>Request a subscription by filling out the form below. We will process your request promptly.</p>
+
+                <!-- Subscription Request Form -->
+                <form class="subscription-form" action="/submit-subscription" method="POST">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" placeholder="Company Name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+
+                    <label for="industry">Industry</label>
+                    <input type="text" id="industry" name="industry" placeholder="Your Industry" required>
+
+                    <label for="description">Brief Description</label>
+                    <textarea id="description" name="description" placeholder="Briefly describe your subscription request" required></textarea>
+
+                    <button type="submit" class="btn">Request Subscription</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer placeholder -->
+        <footer id="footer"></footer>
+    </div>
+
+    <script src="loadHeaderFooter.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChemiConnect - Consultation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header placeholder -->
+        <header id="header"></header>
+
+        <!-- Consultation Section -->
+        <section class="consultation">
+            <div class="containerBody">
+                <h3>Consultation</h3>
+                <p>Request a consultation by filling out the form below. We'll get back to you as soon as possible.</p>
+
+                <!-- Consultation Request Form -->
+                <form class="consultation-form" action="/submit-consultation" method="POST">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" placeholder="Company Name">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+
+                    <label for="industry">Industry</label>
+                    <input type="text" id="industry" name="industry" placeholder="Your Industry">
+
+                    <label for="consultation-type">Consultation Type</label>
+                    <select id="consultation-type" name="consultation-type">
+                        <option value="product-selection">Product Selection</option>
+                        <option value="regulatory-support">Regulatory Support</option>
+                        <option value="technical-assistance">Technical Assistance</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="description">Brief Description</label>
+                    <textarea id="description" name="description" placeholder="Briefly describe your consultation request"></textarea>
+
+                    <button type="submit" class="btn">Book a Consultation</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer placeholder -->
+        <footer id="footer"></footer>
+    </div>
+
+    <script src="loadHeaderFooter.js"></script>
+</body>
+</html>

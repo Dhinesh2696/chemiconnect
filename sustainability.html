@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChemiConnect - Sustainability</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Header placeholder -->
+        <div id="header"></div>
+
+        <!-- Sustainability Content -->
+        <section class="sustainability">
+            <div class="containerBody">
+                <h3>Our Commitment to Sustainability</h3>
+                <p>Select a focus area to learn more about our sustainable practices:</p>
+
+                <!-- Dropdown for Sustainability Areas -->
+                <label for="sustainability-options">Explore Our Sustainability Focus Areas:</label>
+                <select class="material-dropdown" id="sustainability-options" name="sustainability-options" onchange="showContent()">
+                    <option value="default">-- Select a Focus Area --</option>
+                    <option value="green-chemistry">Green Chemistry</option>
+                    <option value="optimized-logistics">Optimized Logistics</option>
+                    <option value="sustainable-packaging">Sustainable Packaging</option>
+
+                </select>
+
+                <!-- Dynamic Content Areas -->
+                <div id="green-chemistry" class="content-area" style="display: none; margin-top: 20px;">
+                    <h2 style="margin-bottom: 20px;">Green Chemistry</h2>
+                    <p><strong>Biodegradable Products:</strong> Chemiconnect prioritizes the use of biodegradable materials that break down naturally, reducing environmental pollution and promoting a circular economy.</p>
+                    <p><strong>Low-VOC Formulations:</strong> We develop low volatile organic compound (VOC) chemicals to minimize air pollution and ensure safer products for both the environment and human health.</p>
+                    <p><strong>Renewable Feedstocks:</strong> Wherever possible, we source our raw materials from renewable resources like plant-based oils and bio-based solvents, ensuring that our supply chain is sustainable.</p>
+                    <p><strong>Energy-Efficient Processes:</strong> Our chemical production processes are optimized to consume less energy and reduce emissions, further contributing to a greener planet.</p>
+                    <p><strong>Reduced Waste:</strong> Our focus is on minimizing by-products and waste during production, making our chemical manufacturing processes cleaner and more efficient.</p>
+                </div>
+
+                <div id="optimized-logistics" class="content-area" style="display: none; margin-top: 20px;">
+                    <h2 style="margin-bottom: 20px;">Optimized Logistics</h4>
+                    <p><strong>Route Optimization:</strong> We use advanced logistics software to ensure that our delivery routes are optimized for efficiency, reducing fuel consumption and emissions.</p>
+                    <p><strong>Energy-Efficient Transportation:</strong> Our fleet is either hybrid or energy-efficient, utilizing modern technology to lower our carbon footprint across all transportation activities.</p>
+                    <p><strong>Consolidated Shipments:</strong> To minimize the number of deliveries and reduce emissions, we consolidate multiple orders into single shipments, reducing traffic and transportation waste.</p>
+                    <p><strong>Real-Time Tracking:</strong> Customers can track their orders in real-time, ensuring transparency in delivery times and optimizing overall supply chain management.</p>
+                    <p><strong>Supply Chain Transparency:</strong> We work with suppliers who follow sustainable practices, ensuring that our logistics network adheres to eco-friendly principles from production to delivery.</p>
+                </div>
+
+                <div id="sustainable-packaging" class="content-area" style="display: none; margin-top: 20px;">
+                    <h2 style="margin-bottom: 20px;">Sustainable Packaging</h4>
+                    <p><strong>Biodegradable Packaging Materials:</strong> All our products are packed using biodegradable materials that decompose naturally, reducing landfill waste and environmental impact.</p>
+                    <p><strong>Recyclable Containers:</strong> We offer packaging made from fully recyclable plastics and cardboard, encouraging a circular lifecycle for packaging materials.</p>
+                    <p><strong>Reduced Packaging:</strong> We continuously seek ways to reduce excess packaging by offering compact, efficient designs that use fewer resources while still ensuring product safety.</p>
+                    <p><strong>Reusable Drums and Containers:</strong> For large-scale industrial orders, we provide reusable drums and containers, allowing our customers to return them for cleaning and reuse.</p>
+                    <p><strong>Eco-Friendly Labels and Inks:</strong> Even our labels and branding materials are printed using water-based, non-toxic inks, minimizing harm to the environment while maintaining quality.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer placeholder -->
+        <footer id="footer"></footer>
+    </div>
+
+    <script src="loadHeaderFooter.js"></script>
+    <script>
+        function showContent() {
+            // Hide all content areas
+            document.querySelectorAll('.content-area').forEach(function (content) {
+                content.style.display = 'none';
+            });
+
+            // Get the selected value
+            const selectedValue = document.getElementById('sustainability-options').value;
+
+            // Show the corresponding content based on selected value
+            if (selectedValue !== 'default') {
+                document.getElementById(selectedValue).style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
